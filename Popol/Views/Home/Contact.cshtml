@@ -1,17 +1,55 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+@* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/darkly/bootstrap.css">*@
+<link rel="stylesheet" href="~/Content/gorowl/style.css?@DateTime.Now.ToString("yyyyMMdd24hhmmss")">
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/goworl/hullabaloo.js?@DateTime.Now.ToString("yyyyMMdd24hhmmss")"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.hulla = new hullabaloo();
+        $.hulla.options.ele = '.alert-test';
+        $.hulla.options.offset = {
+            from: "bottom",
+            amount: 500
+        };
+    });
+    //var hulla = new hullabaloo({
+    //    ele: "head",
+    //    offset: {
+    //        from: "bottom",
+    //        amount: 300
+    //    },
+    //    delay: 5000,
+    //    stackup_spacing: 100
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+    //});
+</script>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+<div class="row alert-test">
+    <div class="col-md-9">
+        <address>
+            One Microsoft Way<br />
+            Redmond, WA 98052-6399<br />
+            <abbr title="Phone">P:</abbr>
+            425.555.0100
+        </address>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-success m-2" onclick="$.hulla.send('Success', 'success')">Success</button>
+        <button class="btn btn-danger m-2" onclick="$.hulla.send('danger', 'danger')">danger</button>
+
+        @*<button class="btn btn-success m-2" onclick="hulla.send('Success Message', 'success')">Success</button>
+            <button class="btn btn-danger m-2" onclick="hulla.send('danger Message', 'danger')">Success</button>*@
+
+    </div>
+    <address>
+        @*<strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />*@
+        <strong class="aas">Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>
+</div>
+
+

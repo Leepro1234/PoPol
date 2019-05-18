@@ -8,7 +8,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body style="margin-top:0px; padding-top:0px;">
 
             @*<div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -17,11 +17,9 @@
                         <li><a href="@Url.Action("Contact", "Home", new { id = "1" })">test</a></li>
                     </ul>
                 </div>*@
-
-
         <!-- Links -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Portfolio</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,13 +27,25 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="@Url.Action("Index","Home")">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <!-- Example single danger button -->
+                        @*<div class="btn-group">*@
+                        @*<button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Action
+                        </button>*@
+                        <a class="nav-link dropdown-toggle" id="dropdown1" href="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">메뉴</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown1">
+                            <a class="dropdown-item" href="@Url.Action("Contact","Home",new {id=1})">Action</a>
+                            @*<div class="dropdown-divider"></div>*@
+                            @*<a class="dropdown-item" href="#">Separated link</a>*@
+                        </div>
+                        @*</div>*@
+
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" href="#">Disabled</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
